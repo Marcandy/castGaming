@@ -11,7 +11,7 @@ app.use( json() );
 // app.use( cors() );
 
 mongoose.connect( mongoUri );
-mongoose.connection.once( "open", () => console.log( `Connected to MongoDB at ${ mongoUri }` ) );
+miongoose.connection.once( "open", () => console.log( `Connected to MongoDB at ${ mongoUri }` ) );
 
 // require( "./masterRoutes" )( app );
 
