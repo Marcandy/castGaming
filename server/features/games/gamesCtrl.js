@@ -20,7 +20,7 @@ module.exports = {
   },
 
   updateGame(req, res) {
-    Game.findOneAndUpdate( {name: req.params.name}, { $set: req.body}, (err, product) => {
+    Game.findOneAndUpdate( {name: req.params.id}, { $set: req.body}, (err, product) => {
       if (err ) {
         return res.status(500).json(err);
       }
