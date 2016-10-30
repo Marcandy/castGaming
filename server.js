@@ -4,15 +4,15 @@ const cors = require( 'cors' );
 const mongoose = require( "mongoose" );
 const app = express();
 
-const port = 4000;
+const port = 5000;
 const mongoUri = "mongodb://localhost:27017/castgaming";
 
 app.use( json() );
-// app.use( cors() );
+app.use( cors() );
 
 mongoose.connect( mongoUri );
-miongoose.connection.once( "open", () => console.log( `Connected to MongoDB at ${ mongoUri }` ) );
+mongoose.connection.once( "open", () => console.log( `Connected to MongoDB at ${ mongoUri }` ) );
 
-// require( "./masterRoutes" )( app );
-
+require( "./masterRoutes" )( app );
+app.use( express.static( `${ __dirname }/public` ) );
 app.listen( port, () => console.log( `Express is listening on ${ port }` ) );
