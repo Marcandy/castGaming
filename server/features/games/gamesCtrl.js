@@ -20,11 +20,11 @@ module.exports = {
   },
 
   updateGame(req, res) {
-    Game.findOneAndUpdate( {name: req.params.id}, { $set: req.body}, (err, product) => {
+    Game.findOneAndUpdate( {name: req.params.id}, { $set: req.body}, (err, game) => {
       if (err ) {
         return res.status(500).json(err);
       }
-        return res.status(200).json( product );
+        return res.status(200).json( game );
     });
   }
 }
