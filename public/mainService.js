@@ -11,8 +11,8 @@ angular.module('castgaming')
         return $http.get('http://localhost:5000/api/thread');
     }
 
-    this.postThread = function() {
-        return $http.get('http://localhost:5000/api/thread', thread);
+    this.postThread = function(thread) {
+        return $http.post('http://localhost:5000/api/thread', thread);
     }
 
     this.updateThread = function() {
