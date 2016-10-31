@@ -6,8 +6,12 @@ angular.module('castgaming', ['ui.router'])
     $stateProvider
       .state( 'home', {
         url: '/',
-        templateUrl: './views/home/home.html',
-        controller: 'homeCtrl'
-
+        controller: 'homeCtrl',
+        templateUrl: './views/home/home.html'
+      })
+      .state('thread', {
+        url: '/threads',
+        controller: 'threadCtrl',
+        templateUrl: './views/thread/thread.html'
       })
   })
