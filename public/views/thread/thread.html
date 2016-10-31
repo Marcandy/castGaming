@@ -11,7 +11,7 @@
 <div class="">
   <ul>
     <li ng-repeat= 'thread in threads'>
-      <h5>{{thread.title}}</h5>
+      <h5><a ui-sref="post">{{thread.title}}</a></h5>
       <p> {{thread.content}}</p>
     </li>
   </ul>
