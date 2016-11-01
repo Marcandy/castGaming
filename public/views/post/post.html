@@ -1,0 +1,12 @@
+<section>
+
+  <div ng-repeat= 'thread in threads'>
+
+        <h5><a ui-sref="post">{{thread.title}}</a></h5>
+        <p>{{thread.dateCreated}}</p>
+        <p>{{thread.content}}</p>
+        <p>{{thread.author}}</p>
+
+  </div>
+
+</section>

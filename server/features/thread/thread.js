@@ -6,7 +6,8 @@ const Thread = new mongoose.Schema({
   dateCreated: {type: Number},
   author: {type: String},
   content: {type: String},
-  // replies: [reply]
+  replies: [{type: mongoose.Schema.Types.ObjectId, ref: 'Reply'}],
+  game: {type: String}
 })
 
 module.exports = mongoose.model('Thread', Thread)
