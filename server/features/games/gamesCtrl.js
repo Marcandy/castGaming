@@ -2,7 +2,9 @@ const Game = require('./games');
 
 module.exports = {
   getGames(req, res) {
-    Game.find( {}, (err, games) => {
+    Game.find( {})
+    .populate(thread)
+    (err, games) => {
       if( err ){
         return res.status(500).json(err);
       }

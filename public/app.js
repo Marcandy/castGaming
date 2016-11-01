@@ -12,7 +12,8 @@ angular.module('castgaming', ['ui.router'])
       .state('thread', {
         url: '/threads',
         controller: 'threadCtrl',
-        templateUrl: './views/thread/thread.html'
+        templateUrl: './views/thread/thread.html',
+        params: {game: null}
       })
       .state('post', {
         url: '/post',

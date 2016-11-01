@@ -1,4 +1,6 @@
-angular.module('castgaming').controller('threadCtrl', function($scope, mainService) {
+angular.module('castgaming').controller('threadCtrl', function($scope, $stateParams, mainService) {
+  $scope.game = $stateParams.game;
+  console.log($scope.game);
 
   $scope.listThreads = function () {
     mainService.getThread().then( results => {
