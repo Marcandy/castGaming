@@ -10,10 +10,9 @@ angular.module('castgaming', ['ui.router'])
         templateUrl: './views/home/home.html'
       })
       .state('thread', {
-        url: '/threads',
+        url: '/threads/:gameId',
         controller: 'threadCtrl',
-        templateUrl: './views/thread/thread.html',
-        params: {game: null}
+        templateUrl: './views/thread/thread.html'
       })
       .state('post', {
         url: '/post',

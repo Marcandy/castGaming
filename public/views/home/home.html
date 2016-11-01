@@ -6,7 +6,7 @@
       </TH>
    </TR>
    <TR ALIGN="CENTER" ng-repeat='game in games'>
-      <TD><a ui-sref="thread({game})">{{game.name}}</a></TD>
+      <TD><a ui-sref="thread({gameId: game._id})">{{game.name}}</a></TD>
       <td>{{game.subtext}}</td>
       <td><img class="gameImg" ng-src="{{game.imgUrl}}" alt="" /></td>
 
@@ -14,3 +14,5 @@
 </TABLE>
 
 </main>
+
+<!-- ui-sref="thread({game})" -->
