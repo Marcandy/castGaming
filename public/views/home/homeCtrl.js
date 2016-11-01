@@ -1,4 +1,4 @@
-angular.module('castgaming').controller('homeCtrl', function($scope, mainService) {
+angular.module('castgaming').controller('homeCtrl', function($scope, mainService, $stateParams, $state) {
 
     $scope.listGames = function() {
       mainService.getGames().then( results => {
@@ -7,4 +7,8 @@ angular.module('castgaming').controller('homeCtrl', function($scope, mainService
       })
     }
       $scope.listGames();
+
+      $scope.showThread = function() {
+          $state.go('thread');
+      }
   })

@@ -7,8 +7,8 @@ angular.module('castgaming')
     }
 
     // getting and creating creating thread
-    this.getThread = function() {
-        return $http.get('http://localhost:5000/api/thread');
+    this.getThreadsForGame = function(gameId) {
+        return $http.get('http://localhost:5000/api/games/' + gameId);
     }
 
     this.postThread = function(thread) {
