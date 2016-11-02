@@ -1,4 +1,5 @@
 const Reply = require('./reply');
+const Thread = require('../thread/thread.js');
 
 module.exports = {
   getReply(req, res) {
@@ -10,12 +11,28 @@ module.exports = {
     })
   },
 
+  // postReply(req, res) {
+  //   new Reply( req.body).save((err, reply) => {
+  //     if( err ){
+  //       return res.status(500).json(err);
+  //     }
+  //       return res.status(201).json( reply );
+  //   })
+  // },
+
   postReply(req, res) {
-    new Reply( req.body).save((err, reply) => {
-      if( err ){
-        return res.status(500).json(err);
-      }
-        return res.status(201).json( reply );
+    new Reply( req.body ).save( (err, reply) =>{
+      if ( err ) {
+				return res.status( 500 ).json( err );
+			}
+      Thread.findByIdAndUpdate(req.params.id, {$push: {replies: reply._id}}, {new: true})
+      .populate("replies")
+      .exec( (err,  thread)  => {
+        if (err ) {
+          return res.status( 500 ).json( err);
+        }
+          return res.status( 201).json( thread );
+      })
     })
   },
 
