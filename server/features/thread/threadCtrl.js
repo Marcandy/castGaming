@@ -16,7 +16,7 @@ module.exports = {
       if ( err ) {
 				return res.status( 500 ).json( err );
 			}
-      Game.findOneAndUpdate(req.body.game, {$push: {threads: thread._id}}, {new: true})
+      Game.findOneAndUpdate({name: req.body.game}, {$push: {threads: thread._id} }, {new: true})
       .populate("threads")
       .exec( (err,  game)  => {
         if (err ) {
@@ -25,9 +25,6 @@ module.exports = {
           return res.status( 201).json( game );
       })
     })
-
-
-
   },
 
   // addStudentToCohort( req, res ) {
