@@ -1,4 +1,4 @@
-angular.module('castgaming').controller('postCtrl', function($scope, mainService) {
+angular.module('castgaming').controller('postCtrl', function($scope, mainService, $stateParams) {
 
   // $scope.listThreads = function () {
   //   mainService.getThread().then( results => {
@@ -7,5 +7,11 @@ angular.module('castgaming').controller('postCtrl', function($scope, mainService
   //   } );
   // }
   //   $scope.listThreads();
+
+  mainService.getRepliesForThread($stateParams.threadId).then( thread => {
+    console.log(thread);
+    $scope.replies = thread.data.replies;
+    $scope.thread = thread.data;
+  } );
 
 })

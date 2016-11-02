@@ -1,11 +1,12 @@
 <section>
+  {{thread}}
 
-  <div ng-repeat= 'thread in threads'>
+  <div ng-repeat= 'reply in replies'>
 
-        <h5><a ui-sref="post">{{thread.title}}</a></h5>
-        <p>{{thread.dateCreated}}</p>
-        <p>{{thread.content}}</p>
-        <p>{{thread.author}}</p>
+        <h5><a ui-sref="post">{{reply.title}}</a></h5>
+        <p>{{reply.dateCreated}}</p>
+        <p>{{reply.content}}</p>
+        <p>{{reply.author}}</p>
 
   </div>
 

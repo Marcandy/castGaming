@@ -7,4 +7,3 @@ module.exports = app => {
     .put(replyCtrl.postReply)
     .put(replyCtrl.updateReply);
 }
-;

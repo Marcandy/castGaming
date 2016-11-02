@@ -11,6 +11,8 @@ angular.module('castgaming')
         return $http.get('http://localhost:5000/api/games/' + gameId);
     }
 
+    // ----------------------Threads------------------------
+
     this.postThread = function(thread) {
         return $http.post('http://localhost:5000/api/thread', thread);
     }
@@ -22,6 +24,11 @@ angular.module('castgaming')
           data: thread
         })
     }
+
+    this.getRepliesForThread = function(threadId) {
+        return $http.get('http://localhost:5000/api/thread/' + threadId);
+    }
+    //-----------------------------------------------------
 
 
   })
