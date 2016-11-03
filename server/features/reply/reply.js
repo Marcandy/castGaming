@@ -4,7 +4,7 @@ const Reply = new mongoose.Schema({
   author: {type: String},
   content: {type: String},
   count: {type: Number},
-  dateCreated: {type: String},
+  dateCreated: {type: Date, default: Date.now},
   thread: {type: String}
 })
 
