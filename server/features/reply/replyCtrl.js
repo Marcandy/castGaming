@@ -21,11 +21,13 @@ module.exports = {
   // },
 
   postReply(req, res) {
-    new Reply( req.body ).save( (err, reply) =>{
+    console.log(req.body);
+    new Reply( req.body.reply ).save( (err, reply) =>{
       if ( err ) {
 				return res.status( 500 ).json( err );
 			}
-      Thread.findByIdAndUpdate(req.params.id, {$push: {replies: reply._id}}, {new: true})
+      console.log(reply);
+      Thread.findByIdAndUpdate(req.body.threadId, {$push: {replies: reply._id}}, {new: true})
       .populate("replies")
       .exec( (err,  thread)  => {
         if (err ) {

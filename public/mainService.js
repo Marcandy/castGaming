@@ -28,7 +28,14 @@ angular.module('castgaming')
     this.getRepliesForThread = function(threadId) {
         return $http.get('http://localhost:5000/api/thread/' + threadId);
     }
-    //-----------------------------------------------------
+    //------------------- Replies----------------------------------
 
+    this.postReply = function(reply) {
+      return $http({
+        method: 'POST',
+        url: 'http://localhost:5000/api/reply',
+        data: reply
+      })
+    }
 
   })
