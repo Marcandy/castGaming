@@ -45,5 +45,18 @@ module.exports = {
       }
         return res.status(200).json( thread );
     });
+  },
+
+  getRepliesForThread(req, res) {
+    Thread.findById( req.params.threadId)
+    .populate('replies')
+    .exec(
+      (err, thread) => {
+      if (err ) {
+        return res.status(500).json(err);
+      }
+
+        return res.status(200).json(thread);
+    })
   }
 }

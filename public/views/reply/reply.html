@@ -1,6 +1,17 @@
+<!-- <div class="">
+  <ul>
+    <li ng-repeat= 'reply in replies'>
+      <h5>{{reply.author}}</h5>
+      <p>{{reply.content}}</p>
+    </li>
+  </ul>
+</div> -->
 
-<reply>
+<input type="text" placeholder="author" ng-model='reply.author'/>
+<textarea placeholder="content" ng-model="reply.content"></textarea>
+<input type="submit" value="create" ng-click='postReply({
+  reply,
+  threadId: threadId
 
-
-
-</reply>
+})'
+/>
