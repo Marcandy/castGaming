@@ -18,6 +18,6 @@ angular.module('castgaming')
       $scope.thread = thread.data;
     } );
   }
-
   $scope.updateThread();
+  
 })
