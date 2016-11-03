@@ -1,5 +1,5 @@
 angular.module('castgaming')
-  .directive('reply', function(mainService,  $stateParams) {
+  .directive('reply', function(mainService,  $stateParams, $state) {
 
     return {
         restrict: 'E',
@@ -17,7 +17,7 @@ angular.module('castgaming')
               console.log(result);
               $scope.reply = result.data;
               $state.reload();
-              $scope.updateThread();
+              // $scope.updateThread();
             })
           }
 

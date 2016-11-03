@@ -12,7 +12,7 @@
 <div class="">
   <ul>
     <li ng-repeat= 'thread in threads'>
-      <h5><a ui-sref="post({threadId: thread._id})">{{thread.title}}</a></h5>
+      <h5><a ui-sref="threadReplies({threadId: thread._id})">{{thread.title}}</a></h5>
       <p>{{thread.content}}</p>
     </li>
   </ul>

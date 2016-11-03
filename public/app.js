@@ -9,14 +9,14 @@ angular.module('castgaming', ['ui.router'])
         controller: 'homeCtrl',
         templateUrl: './views/home/home.html'
       })
-      .state('thread', {
+      .state('gameThread', {
         url: '/threads/:gameId',
-        controller: 'threadCtrl',
-        templateUrl: './views/thread/thread.html'
+        controller: 'gameThreadCtrl',
+        templateUrl: './views/gameThread/gameThread.html'
       })
-      .state('post', {
-        url: '/post/:threadId',
-        controller: 'postCtrl',
-        templateUrl: './views/post/post.html'
+      .state('threadReplies', {
+        url: '/threadReplies/:threadId',
+        controller: 'threadRepliesCtrl',
+        templateUrl: './views/threadReplies/threadReplies.html'
       })
   })
