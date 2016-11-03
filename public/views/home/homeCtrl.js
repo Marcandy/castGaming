@@ -9,6 +9,6 @@ angular.module('castgaming').controller('homeCtrl', function($scope, mainService
       $scope.listGames();
 
       $scope.showThread = function() {
-          $state.go('thread');
+          $state.go('gameThread');
       }
   })

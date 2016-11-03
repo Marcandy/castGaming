@@ -1,5 +1,5 @@
 angular.module('castgaming')
-.controller('postCtrl', function($scope, mainService, $stateParams) {
+.controller('threadRepliesCtrl', function($scope, mainService, $stateParams) {
 
   // $scope.listThreads = function () {
   //   mainService.getThread().then( results => {
@@ -19,5 +19,5 @@ angular.module('castgaming')
     } );
   }
   $scope.updateThread();
-  
+
 })
