@@ -8,7 +8,6 @@ angular.module('castgaming').controller('threadCtrl', function($scope, $statePar
     } );
   }
 
-
   $scope.listThreads();
 
   $scope.createThread = function(newThread) {

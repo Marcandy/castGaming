@@ -5,6 +5,5 @@ module.exports = app => {
     .get(replyCtrl.getReply)
     .post(replyCtrl.postReply)
   app.route('/api/reply/:id')
-
     .put(replyCtrl.updateReply);
 }
