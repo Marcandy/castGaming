@@ -39,3 +39,8 @@ angular.module('castgaming')
     }
 
   })
+
+//-----------------------------User------------------------------------------
+// this.getGames = function() {
+//     return $http.get('/user');
+// }
