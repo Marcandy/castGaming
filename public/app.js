@@ -4,8 +4,13 @@ angular.module('castgaming', ['ui.router'])
       $urlRouterProvider.otherwise('/');
 
     $stateProvider
-      .state( 'home', {
-        url: '/',
+    .state( 'login', {
+      url: '/',
+      controller: 'loginCtrl',
+      templateUrl: './views/login/login.html'
+      })
+    .state( 'home', {
+        url: '/home',
         controller: 'homeCtrl',
         templateUrl: './views/home/home.html'
       })
