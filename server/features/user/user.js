@@ -6,7 +6,7 @@ const User = new mongoose.Schema({
   facebookId: {type: Number},
   email: {type:String},
   imgUrl: {type: String},
-  password: {type: String}
+  replies: [{type: mongoose.Schema.Types.ObjectId, ref: 'Reply'}]
 })
 User.plugin(findOrCreate)
 

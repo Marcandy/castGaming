@@ -1,12 +1,18 @@
 <section>
   {{thread}}
 
+
+  <hr>
+
+  {{user}}
+
   <div ng-repeat= 'reply in replies'>
 
         <h5><a ui-sref="post">{{reply.title}}</a></h5>
         <p>{{reply.dateCreated}}</p>
         <p>{{reply.content}}</p>
         <p>{{reply.author}}</p>
+        <p>{{reply.user}}</p>
         <reply thread-id ='threadId'></reply>
   </div>
 
