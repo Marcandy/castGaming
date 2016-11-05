@@ -13,11 +13,19 @@ angular.module('castgaming')
 
   $scope.updateThread = function() {
     mainService.getRepliesForThread($scope.threadId).then( thread => {
-      console.log(thread);
+
       $scope.replies = thread.data.replies;
       $scope.thread = thread.data;
     } );
   }
   $scope.updateThread();
 
+  $scope.getUser = function() {
+    mainService.getUser().then( result => {
+        
+        $scope.user = result.data;
+      })
+  }
+
+  $scope.getUser();
 })
