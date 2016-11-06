@@ -39,8 +39,8 @@ angular.module('castgaming')
     }
 
 
-this.getUser = function() {
-    return $http.get('http://localhost:5000/api/user');
-  }
+  this.getUser = function() {
+      return $http.get('http://localhost:5000/api/user');
+    }
 
 })

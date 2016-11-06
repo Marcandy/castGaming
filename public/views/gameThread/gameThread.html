@@ -1,22 +1,50 @@
-<main>
 
-<!-- <input type='text' name="name" placeholder="title" ng-model="title">
+
+    <!-- <input type='text' name="name" placeholder="title" ng-model="title">
 
 <textarea name="name" rows="8" cols="40" ng-model='content' placeholder="content"></textarea> -->
 
-<input type="text" placeholder="Title" ng-model='newThread.title'/>
-<textarea placeholder="content" ng-model="newThread.content"></textarea>
-<input type="text" placeholder="game" ng-model='newThread.game'/>
-<input type="submit" value="create" ng-click='createThread(newThread)'/>
+    <div>
+        <li class="sectionHeaders">ThreadsList</li>
 
-<div class="">
-  <ul>
-    <li ng-repeat= 'thread in threads'>
-      <h5><a ui-sref="threadReplies({threadId: thread._id})">{{thread.title}}</a></h5>
-      <p>{{thread.content}}</p>
-    </li>
-  </ul>
-</div>
+        <hr>
 
+        <input type="text" placeholder="Title" ng-model='newThread.title' />
+        <textarea placeholder="content" ng-model="newThread.content"></textarea>
+        <input type="text" placeholder="game" ng-model='newThread.game' />
+        <input type="submit" value="create" ng-click='createThread(newThread)' />
+    </div>
 
-</main>
+    <table class="thread-table">
+        <thead></thead>
+
+        <tbody class="tbodyThread">
+
+            <tr class='thread-row' ng-repeat='thread in threads'>
+                <td class='thread-td'>
+                    <div class="thread-content">
+                        <ul class="threadRow">
+                                <h3><a ui-sref="threadReplies({threadId: thread._id})">{{thread.title}}</a></h3>
+
+                                <p>{{thread.content}}</p>
+
+                        </ul>
+                    </div>
+
+                </td>
+                <td class='thread-td'>
+                    <div class="thread-content">
+                        <div class="threadRow">
+                            {{user.name}}
+                            <img class='avatar'
+                             ng-src="{{user.imgUrl}}" alt="" />
+
+                        </div>
+                    </div>
+                </td>
+
+            </tr>
+
+        </tbody>
+
+    </table>
