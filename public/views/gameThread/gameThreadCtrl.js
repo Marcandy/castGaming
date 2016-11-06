@@ -19,4 +19,16 @@ angular.module('castgaming').controller('gameThreadCtrl', function($scope, $stat
     })
   }
 
+  $scope.getUser = function() {
+    mainService.getUser().then( result => {
+
+        $scope.user = result.data["0"];
+        console.log($scope.user);
+      })
+  }
+
+  $scope.getUser();
+
+
+
 });
