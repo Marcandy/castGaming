@@ -31,9 +31,9 @@ passport.use(new FacebookStrategy({
   callbackURL: config.facebook.cbUrl,
   profileFields: ['id', 'name', 'email', 'photos'],
 }, function(accessToken, refreshToken, profile, cb) {
-    console.log(profile);
+    // console.log(profile);
     User.findOrCreate({ facebookId: profile.id }, {name: profile.name.givenName, email: profile.email, imgUrl: profile.photos ? profile.photos[0].value : '/img/faces/unknown-user-pic.jpg'}, function (err, user) {
-      console.log(user);
+      // console.log(user);
       return cb(err, user);
     });
   }

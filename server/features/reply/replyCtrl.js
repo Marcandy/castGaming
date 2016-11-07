@@ -21,14 +21,11 @@ module.exports = {
   // },
 
   postReply(req, res) {
-    console.log(req.body);
     new Reply( req.body.reply ).save( (err, reply) =>{
       if ( err ) {
 				return res.status( 500 ).json( err );
 			}
       //push user by req params uerId
-      
-      console.log(reply);
       Thread.findByIdAndUpdate(req.body.threadId, {$push: {replies: reply._id, user: reply.user._id} }, {new: true})
       .populate("replies user")
       .exec( (err,  thread)  => {
