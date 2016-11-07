@@ -12,7 +12,8 @@
         <input type="text" placeholder="Title" ng-model='newThread.title' />
         <textarea placeholder="content" ng-model="newThread.content"></textarea>
         <input type="text" placeholder="game" ng-model='newThread.game' />
-        <input type="submit" value="create" ng-click='createThread(newThread)' />
+        <input type="submit" value="create" ng-click='createThread(newThread)'/>
+
     </div>
 
     <table class="thread-table">
@@ -21,25 +22,25 @@
         <tbody class="tbodyThread">
 
             <tr class='thread-row' ng-repeat='thread in threads'>
+
                 <td class='thread-td'>
                     <div class="thread-content">
                         <ul class="threadRow">
-                                <h3><a ui-sref="threadReplies({threadId: thread._id})">{{thread.title}}</a></h3>
-
-                                <p>{{thread.content}}</p>
-
+                            <h3><a ui-sref="threadReplies({threadId: thread._id})">{{thread.title}}</a></h3>
+                            <p>{{thread.content}}</p>
                         </ul>
                     </div>
-                </td>
-                <td class='thread-td'>
                     <div class="thread-content">
-                        <div class="threadRow">
-                            {{user.name}}
-                            <img class='avatar'
-                             ng-src="{{user.imgUrl}}" alt="" />
 
-                        </div>
                     </div>
+                </td>
+
+
+                <td class='thread-td'>
+                    {{user.name}}
+                    <img class='avatar'
+                     ng-src="{{user.imgUrl}}" alt=""
+                     />
                 </td>
 
             </tr>
@@ -51,6 +52,8 @@
     {{thread.title}}
   </div>
 </div> -->
+
+
 
 
 

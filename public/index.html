@@ -6,7 +6,18 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>castgaming</title>
 
-  <link rel="stylesheet" href="style.css" media="screen" title="no title">
+  <script
+    src="https://code.jquery.com/jquery-3.1.1.js"
+    integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
+    crossorigin="anonymous">
+  </script>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="style.css">
+
 
 </head ng-controller="mainCtrl">
 <body>
@@ -14,13 +25,18 @@
 <ui-view></ui-view>
 
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.js" ></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.1/angular-ui-router.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.1/angular-ui-router.js">
+
+</script>
+
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.css" charset="utf-8"></script> -->
 
 <!-- main-files -->
 <script src="app.js"></script>
 <script src="mainService.js" charset="utf-8"></script>
 
 <!-- views -->
+
 <script src="./views/home/homeCtrl.js"></script>
 <script src="./views/gameThread/gameThreadCtrl.js"></script>
 <script src="./views/threadReplies/threadRepliesCtrl.js"></script>
