@@ -1,10 +1,18 @@
+<div class="gameLogo container">
+  <div class="row">
+    <div class="col-md-12 ">
+      <img  ng-src="{{game.imgUrl}}" alt="" />
+    </div>
+  </div>
+</div>
+
 
 
     <!-- <input type='text' name="name" placeholder="title" ng-model="title">
 
-<textarea name="name" rows="8" cols="40" ng-model='content' placeholder="content"></textarea> -->
+    <textarea name="name" rows="8" cols="40" ng-model='content' placeholder="content"></textarea> -->
 
-    <div>
+    <!-- <div>
         <li class="sectionHeaders">ThreadsList</li>
 
         <hr>
@@ -14,49 +22,100 @@
         <input type="text" placeholder="game" ng-model='newThread.game' />
         <input type="submit" value="create" ng-click='createThread(newThread)'/>
 
+    </div> -->
+<div class="container">
+    <!-- head container-->
+
+
+    <div class="row">
+        <div class="col-md-4">
+            <h1>ThreadList</h1>
+        </div>
+
+
+        <div class="col-md-8">
+            <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+                  Create Thread
+                </button>
+
+            <!---                              Modal                      -->
+            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title" id="myModalLabel">Login</h4>
+                        </div>
+                        <div class="modal-body">
+
+                            <div>
+                                <li class="sectionHeaders">NewThread</li>
+
+                                <hr>
+
+                                <input type="text" placeholder="Title" ng-model='newThread.title' />
+                                <textarea placeholder="content" ng-model="newThread.content"></textarea>
+                                <input type="text" placeholder="game" ng-model='newThread.game' />
+                                <input type="submit" value="create"  />
+
+                            </div>
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal" ng-click='createThread(newThread)'>Close</button>
+                            <button type="button" class="btn btn-primary" >Done</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
     </div>
 
-    <table class="thread-table">
-        <thead></thead>
-
-        <tbody class="tbodyThread">
-
-            <tr class='thread-row' ng-repeat='thread in threads'>
-
-                <td class='thread-td'>
-                    <div class="thread-content">
-                        <ul class="threadRow">
-                            <h3><a ui-sref="threadReplies({threadId: thread._id})">{{thread.title}}</a></h3>
-                            <p>{{thread.content}}</p>
-                        </ul>
-                    </div>
-                    <div class="thread-content">
-
-                    </div>
-                </td>
 
 
-                <td class='thread-td'>
+    <!-- threadRow -->
+
+    <div class=" row thread-row">
+        <li class="col-md-12 rowList " ng-repeat='thread in threads'>
+
+            <div class="col-md-3 threadBorder">
+                <span class="">
                     {{user.name}}
                     <img class='avatar'
                      ng-src="{{user.imgUrl}}" alt=""
-                     />
-                </td>
+		        </span>
+            </div>
 
-            </tr>
+                <div class="col-md-6">
 
-<!-- <div class="ui divided inbox selection list active tab" data-tab="unread" ng-controller="ThreadController">
-  <div class="item" ng-repeat="thread in forum.threads" ng-click="go('/forum/{{forum.id}}/thread/{{thread.id}}')">
-    <div class="right floated date">{{thread.created| timeAgo}}</div>
-    <i class="empty star link icon"></i>
-    {{thread.title}}
-  </div>
-</div> -->
+                <div class="titleText">
+                    <h3 class="title">
+                        <h3><a ui-sref="threadReplies({threadId: thread._id})">{{thread.title}}</a></h3>
+			        </h3>
+
+                    <div class="secondRow">
+                        <p>{{thread.content}}</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class=" col-md-3 listBlock stats pairsJustified " title="Members who liked the first message: 1">
+                <h4>Replies Count</h4>
+                last user post and image
+            </div>
+    </li>
+
+
+</div>
 
 
 
+<!-- </table>
 
+ />
 
-    </tbody>
-
-</table>
+ <h3><a ui-sref="threadReplies({threadId: thread._id})">{{thread.title}}</a></h3>
+ <p>{{thread.content}}</p> -->

@@ -22,7 +22,7 @@ module.exports = {
         if (err ) {
           return res.status( 500 ).json( err);
         }
-          return res.status( 201).json( game );
+          return res.status( 201).json( thread );
       })
     })
   },

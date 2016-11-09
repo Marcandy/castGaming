@@ -1,5 +1,5 @@
-<section>
-  {{thread}}
+{{thread}}
+  <!--
 
 
   <hr>
@@ -14,8 +14,42 @@
         <p>{{reply.author}}</p>
         <p>{{reply.user}}</p>
         <reply thread-id ='threadId'></reply>
-  </div>
+  </div> -->
 
   <!-- <reply thread-id ='threadId'></reply> -->
 
-</section>
+
+  <!-- reply forum Grid -->
+<div class="container">
+  <div class=" row thread-row">
+        <li class="col-md-12 rowList " ng-repeat='reply in replies'>
+          <div class="reply-heading"></div>
+
+            <div class="col-md-3" >
+                <span>
+                    {{user.name}}
+                    <img class='avatar'
+                     ng-src="{{user.imgUrl}}" alt=""
+                </span>
+
+            </div>
+
+                <div class="col-md-6">
+
+                  <div class="titleText">
+                    <h5><a ui-sref="post">{{reply.title}}</a></h5>
+                    <p>{{reply.dateCreated}}</p>
+                    <p>{{reply.content}}</p>
+                    <p>{{reply.author}}</p>
+                    <p>{{reply.user}}</p>
+                  </div>
+
+                </div>
+
+            <div class="" title="Members who liked the first message: 1">
+                <reply thread-id ='threadId'></reply>
+            </div>
+        </li>
+
+  </div>
+</div>

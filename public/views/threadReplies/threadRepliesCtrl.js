@@ -18,11 +18,12 @@ angular.module('castgaming')
       $scope.thread = thread.data;
     } );
   }
+  
   $scope.updateThread();
 
   $scope.getUser = function() {
     mainService.getUser().then( result => {
-        
+
         $scope.user = result.data;
       })
   }
