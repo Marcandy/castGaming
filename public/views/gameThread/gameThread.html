@@ -1,10 +1,18 @@
+<div class="gameLogo container">
+  <div class="row">
+    <div class="col-md-12 ">
+      <img  ng-src="{{game.imgUrl}}" alt="" />
+    </div>
+  </div>
+</div>
+
 
 
     <!-- <input type='text' name="name" placeholder="title" ng-model="title">
 
-<textarea name="name" rows="8" cols="40" ng-model='content' placeholder="content"></textarea> -->
+    <textarea name="name" rows="8" cols="40" ng-model='content' placeholder="content"></textarea> -->
 
-    <div>
+    <!-- <div>
         <li class="sectionHeaders">ThreadsList</li>
 
         <hr>
@@ -14,49 +22,140 @@
         <input type="text" placeholder="game" ng-model='newThread.game' />
         <input type="submit" value="create" ng-click='createThread(newThread)'/>
 
-    </div>
+    </div> -->
+<div class="container">
+    <!-- head container-->
 
-    <table class="thread-table">
-        <thead></thead>
 
-        <tbody class="tbodyThread">
+    <div class="row">
+        <div class="col-md-4">
+            <h1>ThreadList</h1>
+        </div>
 
-            <tr class='thread-row' ng-repeat='thread in threads'>
 
-                <td class='thread-td'>
-                    <div class="thread-content">
-                        <ul class="threadRow">
-                            <h3><a ui-sref="threadReplies({threadId: thread._id})">{{thread.title}}</a></h3>
-                            <p>{{thread.content}}</p>
-                        </ul>
+        <div class="col-md-8">
+            <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+                  Create Thread
+                </button>
+
+            <!---                              Modal                      -->
+            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title" id="myModalLabel">Login</h4>
+                        </div>
+                        <div class="modal-body">
+
+                            <div>
+                                <li class="sectionHeaders">NewThread</li>
+
+                                <hr>
+
+                                <input type="text" placeholder="Title" ng-model='newThread.title' />
+                                <textarea placeholder="content" ng-model="newThread.content"></textarea>
+                                <input type="text" placeholder="game" ng-model='newThread.game' />
+                                <input type="submit" value="create"  />
+
+                            </div>
+
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-default btn-primary" data-dismiss="modal" ng-click='createThread(newThread)'>Close</button>
+
+                          <button type="button" class="btn btn-primary" >Done</button>
+                        </div>
                     </div>
-                    <div class="thread-content">
+                </div>
+            </div>
 
-                    </div>
-                </td>
+          </div>
+
+      </div>
 
 
-                <td class='thread-td'>
+
+    <!-- threadRow -->
+
+    <div class=" row thread-row">
+        <li class="col-md-12 rowList " ng-repeat='thread in threads'>
+
+            <div class="col-md-3 threadBorder">
+                <span class="">
                     {{user.name}}
                     <img class='avatar'
                      ng-src="{{user.imgUrl}}" alt=""
-                     />
-                </td>
+		            </span>
+            </div>
 
-            </tr>
+                <div class="col-md-6">
 
-<!-- <div class="ui divided inbox selection list active tab" data-tab="unread" ng-controller="ThreadController">
-  <div class="item" ng-repeat="thread in forum.threads" ng-click="go('/forum/{{forum.id}}/thread/{{thread.id}}')">
-    <div class="right floated date">{{thread.created| timeAgo}}</div>
-    <i class="empty star link icon"></i>
-    {{thread.title}}
+                <div class="titleText">
+                    <h3 class="title">
+                        <h3><a ui-sref="threadReplies({threadId: thread._id})">{{thread.title}}</a></h3>
+			        </h3>
+
+                    <div class="secondRow">
+                        <p>{{thread.content}}</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class=" col-md-3 listBlock stats pairsJustified " title="Members who liked the first message: 1">
+                <h4>Replies Count</h4>
+                last user post and image
+            </div>
+        </li>
+    </div>
+
+
+
+<!-- </table>
+
+ />
+
+ <h3><a ui-sref="threadReplies({threadId: thread._id})">{{thread.title}}</a></h3>
+ <p>{{thread.content}}</p> -->
+
+
+<div class="" ng-if=>
+
+  <div class="Dota 2">
+    <h5>
+      Heroes are the essential element of Dota 2, as the course of the game is dependent on their intervention. During a match, two opposing teams select five heroes that accumulate experience and gold. Once a hero has enough experience, it will level up, growing more powerful and gaining new abilities. Most heroes have a distinct role that defines how they affect the battlefield, though many heroes can perform multiple roles. A hero's appearance can be modified with Equipment.
+
+      Currently, 112 of the 113 heroes are playable. For a table of heroes sorted by attributes and mechanics, see Table of Hero attributes.
+</h5>
+    <img src="dota2-gameplay" alt="" />
   </div>
-</div> -->
+
+  <div class="HearthStone">
+    <h5>
+      Heroes are the essential element of Dota 2, as the course of the game is dependent on their intervention. During a match, two opposing teams select five heroes that accumulate experience and gold. Once a hero has enough experience, it will level up, growing more powerful and gaining new abilities. Most heroes have a distinct role that defines how they affect the battlefield, though many heroes can perform multiple roles. A hero's appearance can be modified with Equipment.
+
+      Currently, 112 of the 113 heroes are playable. For a table of heroes sorted by attributes and mechanics, see Table of Hero attributes.
+  </h5>
+    <img src="" alt="" />
+  </div>
+
+  <div class="Overwatch">
+    <h5>
+      Heroes are the essential element of Dota 2, as the course of the game is dependent on their intervention. During a match, two opposing teams select five heroes that accumulate experience and gold. Once a hero has enough experience, it will level up, growing more powerful and gaining new abilities. Most heroes have a distinct role that defines how they affect the battlefield, though many heroes can perform multiple roles. A hero's appearance can be modified with Equipment.
+
+      Currently, 112 of the 113 heroes are playable. For a table of heroes sorted by attributes and mechanics, see Table of Hero attributes.
+  </h5>
+    <img src="" alt="" />
+  </div>
+
+  <div class="World of Tanks">
+    World of Tanks is a massively multiplayer online game developed by Belarusian-Cypriot[5] company Wargaming, featuring early to mid-20th century era fighting vehicles.[6] It is built upon a freemium business model where the game is free-to-play, but participants also have the option of paying a fee for use of "premium" features. The focus is on player vs. player gameplay with each player controlling an armored vehicle, which may be a light, medium or heavy tank, tank destroyer, or self-propelled gun. World of Tanks debuted as an eSports game at the World Cyber Games 2012.[7]
+  </div>
+
+  <div class="Smite">
+    Smite (video game) Smite is a third-person multiplayer online battle arena (MOBA) video game developed and published by Hi-Rez Studios for Microsoft Windows, PlayStation 4 and Xbox One.
+  </div>
 
 
-
-
-
-    </tbody>
-
-</table>
+</div>

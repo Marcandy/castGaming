@@ -20,8 +20,13 @@ angular.module('castgaming', ['ui.router'])
         templateUrl: './views/gameThread/gameThread.html'
       })
       .state('threadReplies', {
-        url: '/threadReplies/:threadId',
+        url: '/threadReplies/:threadId/:marcandy',
         controller: 'threadRepliesCtrl',
         templateUrl: './views/threadReplies/threadReplies.html'
+      })
+      .state('jumbo', {
+        url: '/jumbo',
+        controller: 'jumboCtrl',
+        templateUrl: './views/jumbo/jumbo.html'
       })
   })

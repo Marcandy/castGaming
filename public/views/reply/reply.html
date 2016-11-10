@@ -12,9 +12,11 @@
 </div>
 <input type="text" placeholder="author" ng-model='reply.author'/>
 <textarea placeholder="content" ng-model="reply.content"></textarea>
+
 <input type="submit" value="reply" ng-click='postReply({
   reply,
   threadId: threadId
 
 })'
+
 />

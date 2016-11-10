@@ -1,7 +1,84 @@
+/*login page*/
+#loginButton {
+  color: white;
+}
+
+.loginCover {
+  background-size: cover;
+  background-image: url('./images/cool2.png');
+  height: 800px;
+}
+
+.logButton {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-top: -50px;
+  margin-left: -100px;
+}
+
+.logButton h1 {
+  color: white;
+}
+
+/*------------------------Login  Html-------------*/
 .gameImg {
   height: 70px;
   width: 80px;
 }
+
+.thread-row {
+padding-top: 5px;
+padding-bottom: 5px;
+background-color: rgb(253, 253, 253);
+border-bottom: 1px solid rgb(235, 235, 235);
+}
+
+.rowList {
+  display: table;
+    table-layout: fixed;
+    width: 100%;
+    word-wrap: normal;
+    font-size: 13px;
+
+}
+
+.reply-heading {
+    font-size: 13px;
+    color: rgb(255, 255, 255);
+    background-color: rgb(31, 164, 158);
+    padding: 8px 10px;
+    overflow: hidden;
+    position: relative;
+}
+
+.gameLogo{
+  width: 100%;
+}
+
+.gameLogo img {
+  width: 100%;
+  max-height: 400px;
+  vertical-align: middle;
+  border: solid rgb(31, 164, 158);
+  margin: 15px 0;
+}
+
+
+  /*------------ thread Border---------*/
+.threadBorder {
+  border-left: solid rgb(31, 164, 158);
+}
+
+.avatar {
+  border-radius: 50%
+}
+
+.container {
+  background-color: rgba(19, 20, 22, .90)
+}
+
+
 
 /*.threadTbody {
     display: table-row-group;
@@ -9,11 +86,7 @@
     border-color: inherit;
 }*/
 
-/*.thread-row {
-  border-top: 3px solid #e9e9e9;
-  display: table-row;
-  vertical-align: inherit;
-}
+/*
 
 .avatar {
   border-radius: 50%;
@@ -52,3 +125,24 @@
 .thread-table {
   width: 100%
 }*/
+
+
+/* dummie style*/
+
+.discussionListItem {
+    padding: 4px 5px;
+    box-sizing: border-box;
+}
+
+.discussionListItem {
+    background-color: rgb(20, 21, 23);
+    border-bottom: 1px solid rgb(40, 40, 40);
+}
+
+.discussionList .sectionHeaders, .discussionListItem {
+
+    display: flex;
+    table-layout: fixed;
+    width: 100%;
+    word-wrap: normal;
+}

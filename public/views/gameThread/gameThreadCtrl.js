@@ -1,9 +1,10 @@
-angular.module('castgaming').controller('gameThreadCtrl', function($scope, $stateParams, mainService) {
+angular.module('castgaming').controller('gameThreadCtrl', function($scope, $stateParams, $state, mainService) {
   // let gameId = $stateParams.gameId;
 
   $scope.listThreads = function() {
     mainService.getThreadsForGame($stateParams.gameId).then( game => {
       console.log(game);
+      $scope.game = game.data;
       $scope.threads = game.data.threads;
     } );
   }
@@ -16,6 +17,7 @@ angular.module('castgaming').controller('gameThreadCtrl', function($scope, $stat
       console.log(result);
       $scope.newThread = result.data;
       $scope.listThreads();
+      $state.go('threadReplies', { threadId: result.data._id })
     })
   }
 
