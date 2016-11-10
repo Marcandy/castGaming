@@ -65,12 +65,18 @@ border-bottom: 1px solid rgb(235, 235, 235);
 }
 
 
-/* thread Border*/
+  /*------------ thread Border---------*/
 .threadBorder {
   border-left: solid rgb(31, 164, 158);
 }
 
+.avatar {
+  border-radius: 50%
+}
 
+.container {
+  background-color: rgba(19, 20, 22, .90)
+}
 
 
 
@@ -119,3 +125,24 @@ border-bottom: 1px solid rgb(235, 235, 235);
 .thread-table {
   width: 100%
 }*/
+
+
+/* dummie style*/
+
+.discussionListItem {
+    padding: 4px 5px;
+    box-sizing: border-box;
+}
+
+.discussionListItem {
+    background-color: rgb(20, 21, 23);
+    border-bottom: 1px solid rgb(40, 40, 40);
+}
+
+.discussionList .sectionHeaders, .discussionListItem {
+
+    display: flex;
+    table-layout: fixed;
+    width: 100%;
+    word-wrap: normal;
+}

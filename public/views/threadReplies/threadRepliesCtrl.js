@@ -18,7 +18,7 @@ angular.module('castgaming')
       $scope.thread = thread.data;
     } );
   }
-  
+
   $scope.updateThread();
 
   $scope.getUser = function() {
@@ -29,4 +29,5 @@ angular.module('castgaming')
   }
 
   $scope.getUser();
+  $scope.toggle = false;
 })

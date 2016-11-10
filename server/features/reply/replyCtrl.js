@@ -26,7 +26,8 @@ module.exports = {
 				return res.status( 500 ).json( err );
 			}
       //push user by req params uerId
-      Thread.findByIdAndUpdate(req.body.threadId, {$push: {replies: reply._id, user: reply.user._id} }, {new: true})
+      //<reply thread-id ='threadId'>Reply</reply>
+      Thread.findByIdAndUpdate(req.body.threadId, {$push: {replies: reply._id} }, {new: true})
       .populate("replies user")
       .exec( (err,  thread)  => {
         if (err ) {

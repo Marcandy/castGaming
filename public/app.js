@@ -24,4 +24,9 @@ angular.module('castgaming', ['ui.router'])
         controller: 'threadRepliesCtrl',
         templateUrl: './views/threadReplies/threadReplies.html'
       })
+      .state('jumbo', {
+        url: '/jumbo',
+        controller: 'jumboCtrl',
+        templateUrl: './views/jumbo/jumbo.html'
+      })
   })

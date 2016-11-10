@@ -29,12 +29,6 @@ angular.module('castgaming')
           //   console.log(thread);
           //   $scope.replies = thread.data.replies;
           // } );
-
-
-
-
-
-
         }
       }
     });
