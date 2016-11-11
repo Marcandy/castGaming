@@ -1,6 +1,17 @@
 <!-- {{thread}} -->
 
-{{thread.content}}
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h4>{{thread.title}}</h4>
+
+      <p>{{thread.content}}</p>
+      <span>thread.dateCreated</span>
+    </div>
+  </div>
+</div>
+
   <!--
 
 
@@ -53,8 +64,11 @@
 
 
         </li>
-        <button type="button" name="button" ng-click='toggle = !toggle'>Post</button>
-        <reply  ng-show='toggle' thread-id ='threadId'></reply>
-  </div>
 
+
+  </div>
+<button class='replyB btn btn-primary' type="button" name="button" ng-click='toggle = !toggle'>Post</button>
+<reply  ng-show='toggle' thread-id ='threadId'></reply>
 </div>
+
+<hr>

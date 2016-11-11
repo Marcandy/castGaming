@@ -24,7 +24,7 @@ angular.module('castgaming')
   $scope.getUser = function() {
     mainService.getUser().then( result => {
 
-        $scope.user = result.data;
+        $scope.user = result.data["0"];
       })
   }
 
