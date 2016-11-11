@@ -191,3 +191,8 @@ border-bottom: 1px solid rgb(235, 235, 235);
 .aColor {
   color: white;
 }
+
+/*                    chat            */
+.chat{
+    max-height: 400px;
+}
