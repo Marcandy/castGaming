@@ -11,6 +11,11 @@ const session = require('express-session');
 const config = require('./config.js');
 const User = require ('./server/features/user/user.js');
 
+//for chat
+const server  = require("http").createServer(app);
+const io      = require("socket.io").listen(server);
+
+
 app.use( json() );
 app.use( cors() );
 
@@ -56,8 +61,40 @@ app.get('/user', (req, res) => {
 	res.send(req.user);
 })
 
+//--------------------------------------
+const connections = [];
+const users       = [];
+
+io.sockets.on("connection", socket => {
+  connections.push(socket);
+  console.log(`Connected: ${connections.length} socket(s) on ${port}`);
+
+  socket.on("disconnect", data => {
+    connections.splice(connections.indexOf(data), 1);
+    console.log(`Disconnected: ${connections.length} socket(s) on ${port}`);
+    users.splice(users.indexOf(socket.username), 1);
+    updateUsers();
+  })
+
+  socket.on("new user", data => {
+    socket.username = data;
+    users.push(data);
+    updateUsers();
+  });
+
+  socket.on("send message", data => {
+    io.sockets.emit("get message", {user: socket.username, msg: data});
+  });
+
+  function updateUsers(){
+    io.sockets.emit("update users", users);
+  }
+});
 
 
 
 app.use( express.static( `${ __dirname }/public` ) );
-app.listen( port, () => console.log( `Express is listening on ${ port }` ) );
+
+// both cant be at the same time
+// app.listen( port, () => console.log( `Express is listening on ${ port }` ) );
+server.listen(process.env.PORT || port, () => console.log(`Listening on port ${port}`));
