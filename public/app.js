@@ -4,8 +4,13 @@ angular.module('castgaming', ['ui.router'])
       $urlRouterProvider.otherwise('/');
 
     $stateProvider
-    .state( 'login', {
+    .state('jumbo', {
       url: '/',
+      controller: 'jumboCtrl',
+      templateUrl: './views/jumbo/jumbo.html'
+    })
+    .state( 'login', {
+      url: '/login',
       controller: 'loginCtrl',
       templateUrl: './views/login/login.html'
       })
@@ -23,10 +28,5 @@ angular.module('castgaming', ['ui.router'])
         url: '/threadReplies/:threadId/:marcandy',
         controller: 'threadRepliesCtrl',
         templateUrl: './views/threadReplies/threadReplies.html'
-      })
-      .state('jumbo', {
-        url: '/jumbo',
-        controller: 'jumboCtrl',
-        templateUrl: './views/jumbo/jumbo.html'
       })
   })

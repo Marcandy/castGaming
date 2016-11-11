@@ -1,0 +1,52 @@
+<div class="box">
+   <div class="nav">
+      <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6">
+               <img class='imgl' src="../images/logo2.png" alt="" />
+            </div>
+
+            <div class="col-md-3">
+               <h2>Login</h2>
+            </div>
+            <div class="col-md-3">
+               <h2 ><a class='aColor' ui-sref="login">Forum</a></h2>
+            </div>
+
+
+          </div>
+        </div>
+      </nav>
+
+   </div>
+
+   <hr>
+</div>
+   <!-- <div class="vidGrid" >
+     <div class="vidPart" ng-repeat='game in games'>
+
+   <iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/ak-uYcbywr4\" frameborder=\"0\" allowfullscreen></iframe>
+   <video >
+     <source src="https://www.youtube.com/embed/ak-uYcbywr4" type="mimetype">
+   </video>
+     </div>
+
+
+     <div class="descript">
+
+     </div>
+   </div> -->
+    <div class="vidPart" ng-repeat="game in games">
+       <div class="vidLeft">
+          <iframe width="560" height="315" ng-src="{{ game.vidUrl }}" frameborder="0" allowfullscreen></iframe>
+       </div>
+
+
+      <div class="vidRight">
+         <p>
+           {{game.description}}
+         </p>
+      </div>
+
+    </div>
