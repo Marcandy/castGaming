@@ -41,7 +41,7 @@ angular.module('castgaming')
             $scope.$apply();
           });
 
-
+          
         },
 
         link: function(scope, element, attrs){
