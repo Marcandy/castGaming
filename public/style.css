@@ -1,10 +1,5 @@
 /*login page*/
 
-
-#loginButton {
-  color: white;
-}
-
 .loginCover {
   background-size: cover;
   background-image: url('./images/cool2.png');
@@ -13,8 +8,8 @@
 
 .logButton {
   position: fixed;
-  top: 50%;
-  left: 50%;
+  top: 43%;
+  left: 47%;
   margin-top: -50px;
   margin-left: -100px;
 }
@@ -22,7 +17,6 @@
 .logButton h1 {
   color: white;
 }
-
 
 /*----------------------------- NavBar ------------------------------*/
 .imgl {
@@ -32,11 +26,13 @@
 .navbar {
   background-color: rgb(31, 164, 158);
   color: white;
+  box-shadow: 5px 5px 8px rgb(31, 164, 158);
+
 }
 
 .vidPart {
   display: flex;
-  padding: 30px;
+  padding: 50px 0px 0px 50px;
 }
 
 .vidLeft {
@@ -101,6 +97,9 @@ border-bottom: 1px solid rgb(235, 235, 235);
   margin: 15px 0;
 }
 
+.btn-primary {
+  margin-left: 15px;
+}
 
   /*------------ thread Border---------*/
 .threadBorder {

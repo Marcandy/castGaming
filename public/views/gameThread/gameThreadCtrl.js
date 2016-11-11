@@ -17,9 +17,16 @@ angular.module('castgaming').controller('gameThreadCtrl', function($scope, $stat
       console.log(result);
       $scope.newThread = result.data;
       $scope.listThreads();
-      $state.go('threadReplies', { threadId: result.data._id })
+      // $state.go('threadReplies', { threadId: result.data._id })
     })
   }
+
+  // $scope.threadGo = function(newThread) {
+  //   $state.go('threadReplies', { threadId: result.data._id })
+  // }
+
+
+
 
   $scope.getUser = function() {
     mainService.getUser().then( result => {
