@@ -14,4 +14,6 @@ angular.module('castgaming').controller('homeCtrl', function($scope, mainService
       $scope.showThread = function() {
           $state.go('gameThread');
       }
+
+      $scope.chatToggle = false;
   })

@@ -1,3 +1,48 @@
-<main>
-  
-</main>
+<div class="container chatBox">
+  <div class="row" ng-show="showLogin">
+    <div >
+      <form>
+        <div class="form-group">
+          <label>Enter User Name</label>
+          <input class="form-control" ng-model="username">
+          <br/>
+          <input type="submit" class="btn btn-primary" value="login" ng-click="newUser(username)">
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="row" ng-hide="showLogin">
+
+
+
+
+      <div class="col-md-12">
+          <div class="chat well">
+              <div class="chat-message" ng-repeat="message in messages">
+                  <p>
+                      <strong>{{message.user}}: </strong>
+                      {{message.msg}}
+                  </p>
+              </div>
+          </div>
+      </div>
+
+      <div class="col-md-12">
+
+        <div class="form-group">
+            <h4>Enter Message</h4>
+            <textarea class="enter-user" ng-model="message"></textarea>
+            <br/>
+            <input type="submit" class="btn btn-primary" ng-click="sendMessage(message)">
+            <div ng-repeat='user in users'>
+              <!-- <h4>Users</h4> -->
+              <span>{{user}}</span>
+            </div>
+        </div>
+
+      </div>
+
+
+  </div>
+</div>

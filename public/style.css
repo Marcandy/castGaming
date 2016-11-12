@@ -191,3 +191,25 @@ border-bottom: 1px solid rgb(235, 235, 235);
 .aColor {
   color: white;
 }
+
+/*----------------------chat----------------*/
+.chatBox {
+  min-height: 325px;
+  width: 300px;
+  border: solid gray;
+  background-color: rgb(31, 164, 158);
+  position: fixed;
+  right: 0px;
+  top: 50%;
+}
+
+.chat{
+    min-height: 150px;
+}
+
+.chatB {
+  background-color: rgb(31, 164, 158);
+  position: fixed;
+  right: 0px;
+  top: 75%;
+}

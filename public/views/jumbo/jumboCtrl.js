@@ -13,6 +13,6 @@ angular.module('castgaming')
 
   $scope.listGames();
 
-
+  $scope.chatToggle = false;
 
 })
