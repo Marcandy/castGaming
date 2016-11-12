@@ -44,10 +44,12 @@
        <div class="vidLeft">
           <iframe width="560" height="315" ng-src="{{ game.vidUrl }}" frameborder="0" allowfullscreen></iframe>
        </div>
-
+      <!-- weird loacing effect -->
+       <i class="fa fa-cog fa-spin fa-3x fa-fw"></i>
+          <span class="sr-only">Loading...</span>
 
       <div class="vidRight">
-         <span class="glyphicon glyphicon-certificate"></span>
+
          <p>
            {{game.description}}
          </p>
@@ -55,5 +57,5 @@
 
     </div>
 
-    <button class='chatB btn btn-primary' type="button" name="button" ng-click='chatToggle = !chatToggle'>chat</button>
+    <button class='btn  chatB fa fa-comments fa-2x' type="button" name="button" ng-click='chatToggle = !chatToggle' aria-hidden="true"></button>
     <chat ng-show='chatToggle'></chat>
