@@ -34,7 +34,7 @@
 
 
         <div class="col-md-8">
-            <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+            <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal" gameId='gameId'>
                   Create Thread
                 </button>
 
@@ -64,7 +64,11 @@
                         <div class="modal-footer">
                           <button type="button" class="btn btn-secondary" data-dismiss="modal" ng-click='threadGo()'>Close</button>
 
-                         <button type="button" class="btn btn-primary" ng-click='createThread(newThread)' data-dismiss="modal" >Create</button>
+                         <button type="button" class="btn btn-primary" ng-click='createThread({
+                           newThread,
+                           gameId: gameId
+
+                         })' data-dismiss="modal" >Create</button>
                         </div>
                     </div>
                 </div>
@@ -94,14 +98,14 @@
                 <div class="titleText">
                     <h3 class="title">
                         <h3><a ui-sref="threadReplies({threadId: thread._id})">{{thread.title}}</a></h3>
-			        </h3>
+			          </h3>
 
                     <div class="secondRow">
                         <p>{{thread.content}}</p>
                     </div>
                 </div>
 
-            </div>
+                </div>
 
             <div class=" col-md-3 listBlock stats pairsJustified " title="Members who liked the first message: 1">
                 <h4>Replies Count</h4>

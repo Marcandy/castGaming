@@ -13,8 +13,12 @@ angular.module('castgaming')
 
     // ----------------------Threads------------------------
 
-    this.postThread = function(thread) {
-        return $http.post('http://localhost:5000/api/thread', thread);
+    this.postThread = function(newThread) {
+      return $http({
+        method: 'POST',
+        url: 'http://localhost:5000/api/thread',
+        data: newThread
+      })
     }
 
     this.updateThread = function() {

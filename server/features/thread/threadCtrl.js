@@ -12,11 +12,11 @@ module.exports = {
   },
 
   postThread(req, res) {
-    new Thread( req.body ).save((err, thread) =>{
+    new Thread( req.body.newThread).save((err, thread) =>{
       if ( err ) {
 				return res.status( 500 ).json( err );
 			}
-      Game.findOneAndUpdate({name: req.body.game}, {$push: {threads: thread._id} }, {new: true})
+      Game.findOneAndUpdate(req.body.gameId, {$push: {threads: thread._id} }, {new: true})
       .populate("threads")
       .exec( (err,  game)  => {
         if (err ) {
