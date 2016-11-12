@@ -83,7 +83,7 @@
     <!-- threadRow -->
 
     <div class=" row thread-row">
-        <li class="col-md-12 rowList " ng-repeat='thread in threads'>
+        <li class="col-md-12 rowList " ng-repeat="thread in threads | orderBy:'':true">
 
             <div class="col-md-3 threadBorder">
                 <span class="">
@@ -109,7 +109,7 @@
 
             <div class=" col-md-3 listBlock stats pairsJustified " title="Members who liked the first message: 1">
                 <h4>Replies Count</h4>
-                last user post and image
+                {{thread.dateCreated}}
             </div>
         </li>
     </div>
