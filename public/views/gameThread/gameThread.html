@@ -34,7 +34,7 @@
 
 
         <div class="col-md-8">
-            <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal" gameId='gameId'>
+            <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal" >
                   Create Thread
                 </button>
 
@@ -55,16 +55,15 @@
 
                                 <input type="text" placeholder="Title" ng-model='newThread.title' />
                                 <textarea placeholder="content" ng-model="newThread.content"></textarea>
-                                <input type="text" placeholder="game" ng-model='newThread.game' />
-                                <input type="submit" value="create"  />
+
 
                             </div>
 
                         </div>
-                        <div class="modal-footer">
+                        <div class="modal-footer" gameId='gameId'>
                           <button type="button" class="btn btn-secondary" data-dismiss="modal" ng-click='threadGo()'>Close</button>
 
-                         <button type="button" class="btn btn-primary" ng-click='createThread({
+                         <button  type="button" class="btn btn-primary" ng-click='createThread({
                            newThread,
                            gameId: gameId
 
@@ -126,7 +125,7 @@
  <h3><a ui-sref="threadReplies({threadId: thread._id})">{{thread.title}}</a></h3>
  <p>{{thread.content}}</p> -->
 
-
+<!--
 <div class="" ng-if=>
 
   <div class="Dota 2">
@@ -165,4 +164,4 @@
   </div>
 
 
-</div>
+</div> -->

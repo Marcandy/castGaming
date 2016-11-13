@@ -7,9 +7,8 @@ const Thread = new mongoose.Schema({
   author: {type: String},
   content: {type: String},
   replies: [{type: mongoose.Schema.Types.ObjectId, ref: 'Reply'}],
-  game: {type: String},
   user: [{type: mongoose.Schema.Types.ObjectId, ref: 'User'}]
-
+// game: {type: String}
 })
 
 module.exports = mongoose.model('Thread', Thread)
