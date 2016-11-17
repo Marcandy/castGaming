@@ -12,16 +12,19 @@ module.exports = {
   },
 
   postThread(req, res) {
+    console.log(req.body);
     new Thread( req.body.newThread).save((err, newThread) =>{
       if ( err ) {
 				return res.status( 500 ).json( err );
 			}
-      Game.findOneAndUpdate(req.body.gameId, {$push: {threads: newThread._id} }, {new: true})
+      //find one and update needs to be bracket with underscore id
+      Game.findOneAndUpdate({_id: req.body.gameId}, {$push: {threads: newThread._id} }, {new: true})
       .populate("threads")
       .exec( (err,  game)  => {
         if (err ) {
           return res.status( 500 ).json( err);
         }
+        console.log(game);
           return res.status( 201).json( game );
       })
     })
