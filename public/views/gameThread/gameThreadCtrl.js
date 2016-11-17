@@ -1,5 +1,6 @@
 angular.module('castgaming').controller('gameThreadCtrl', function($scope, $stateParams, $state, mainService) {
-  // let gameId = $stateParams.gameId;
+
+  $scope.gameId = $stateParams.gameId;
 
   $scope.listThreads = function() {
     mainService.getThreadsForGame($stateParams.gameId).then( game => {
@@ -12,12 +13,14 @@ angular.module('castgaming').controller('gameThreadCtrl', function($scope, $stat
   $scope.listThreads();
 
   $scope.createThread = function(newThread) {
+    console.log(newThread);
     mainService.postThread(newThread)
     .then(result => {
       console.log(result);
       $scope.newThread = result.data;
       $scope.listThreads();
       // $state.go('threadReplies', { threadId: result.data._id })
+
     })
   }
 

@@ -34,7 +34,7 @@
 
 
         <div class="col-md-8">
-            <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+            <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal" >
                   Create Thread
                 </button>
 
@@ -55,8 +55,7 @@
 
                                 <input type="text" placeholder="Title" ng-model='newThread.title' />
                                 <textarea placeholder="content" ng-model="newThread.content"></textarea>
-                                <input type="text" placeholder="game" ng-model='newThread.game' />
-                                <input type="submit" value="create"  />
+
 
                             </div>
 
@@ -64,7 +63,11 @@
                         <div class="modal-footer">
                           <button type="button" class="btn btn-secondary" data-dismiss="modal" ng-click='threadGo()'>Close</button>
 
-                         <button type="button" class="btn btn-primary" ng-click='createThread(newThread)' data-dismiss="modal" >Create</button>
+                         <button  type="button" class="btn btn-primary" ng-click='createThread({
+                           newThread,
+                           gameId: gameId
+
+                         })' data-dismiss="modal" >Create</button>
                         </div>
                     </div>
                 </div>
@@ -79,7 +82,7 @@
     <!-- threadRow -->
 
     <div class=" row thread-row">
-        <li class="col-md-12 rowList " ng-repeat='thread in threads'>
+        <li class="col-md-12 rowList " ng-repeat="thread in threads | orderBy:'':true">
 
             <div class="col-md-3 threadBorder">
                 <span class="">
@@ -94,18 +97,18 @@
                 <div class="titleText">
                     <h3 class="title">
                         <h3><a ui-sref="threadReplies({threadId: thread._id})">{{thread.title}}</a></h3>
-			        </h3>
+			          </h3>
 
                     <div class="secondRow">
                         <p>{{thread.content}}</p>
                     </div>
                 </div>
 
-            </div>
+                </div>
 
             <div class=" col-md-3 listBlock stats pairsJustified " title="Members who liked the first message: 1">
                 <h4>Replies Count</h4>
-                last user post and image
+                {{thread.dateCreated}}
             </div>
         </li>
     </div>
@@ -122,7 +125,7 @@
  <h3><a ui-sref="threadReplies({threadId: thread._id})">{{thread.title}}</a></h3>
  <p>{{thread.content}}</p> -->
 
-
+<!--
 <div class="" ng-if=>
 
   <div class="Dota 2">
@@ -161,4 +164,4 @@
   </div>
 
 
-</div>
+</div> -->
